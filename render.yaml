@@ -1,0 +1,73 @@
+# ClimateGuard AI — Render Blueprint
+#
+# This single file deploys the entire stack in one action:
+#   - climateguard-ai-api      (FastAPI backend, Python, ML models + SHAP)
+#   - climateguard-ai-web      (React frontend, static site)
+#   - climateguard-ai-db       (PostgreSQL database)
+#
+# How to use this: push this repo to GitHub, then in the Render Dashboard
+# choose "New +" -> "Blueprint" and point it at the repo. Render reads this
+# file and creates/wires all three resources automatically — no manual
+# service configuration. Full step-by-step is in docs/deployment.md.
+#
+# Free-tier notes (see docs/deployment.md for details):
+#   - Free Postgres on Render expires 30 days after creation (fine for a
+#     demo/competition deployment; upgrade the plan below for anything
+#     longer-lived).
+#   - Free web services spin down after ~15 min idle and take up to ~60s
+#     to wake back up on the next request.
+
+databases:
+  - name: climateguard-ai-db
+    plan: free
+    databaseName: climateguard
+    user: climateguard
+
+services:
+  # --- Backend: FastAPI + ML models + SHAP + PostgreSQL ---
+  - type: web
+    name: climateguard-ai-api
+    runtime: python
+    plan: free
+    rootDir: backend
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "uvicorn app.main:app --host 0.0.0.0 --port $PORT"
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: ENV
+        value: production
+      - key: LOG_LEVEL
+        value: INFO
+      - key: ACCESS_TOKEN_EXPIRE_MINUTES
+        value: "60"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: climateguard-ai-db
+          property: connectionString
+      - key: SECRET_KEY
+        generateValue: true
+      # This must be the frontend's public URL below. Render assigns
+      # https://<name>.onrender.com using the service name unless that
+      # name is already taken by someone else, in which case Render
+      # appends a suffix and you'd update this one value — see
+      # docs/deployment.md "If a service name is already taken".
+      - key: CORS_ORIGINS
+        value: https://climateguard-ai-web.onrender.com
+
+  # --- Frontend: React + Vite static build ---
+  - type: web
+    runtime: static
+    name: climateguard-ai-web
+    rootDir: frontend
+    buildCommand: "npm ci --include=dev && npm run build"
+    staticPublishPath: dist
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      # Must match the backend service's public URL + /api/v1.
+      - key: VITE_API_BASE_URL
+        value: https://climateguard-ai-api.onrender.com/api/v1
