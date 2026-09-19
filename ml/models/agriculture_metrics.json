@@ -1,0 +1,63 @@
+{
+  "best_model": "gradient_boosting",
+  "used_scaler": false,
+  "features": [
+    "rainfall_mm",
+    "temperature_c",
+    "humidity_pct",
+    "soil_saturation_pct",
+    "drought_prone_base",
+    "month",
+    "is_monsoon",
+    "region_enc"
+  ],
+  "all_model_results": {
+    "linear_regression": {
+      "mae": 4.3363,
+      "rmse": 5.5148,
+      "r2_score": 0.1002
+    },
+    "random_forest": {
+      "mae": 4.0155,
+      "rmse": 5.015,
+      "r2_score": 0.2559
+    },
+    "gradient_boosting": {
+      "mae": 4.0111,
+      "rmse": 5.0049,
+      "r2_score": 0.2589
+    }
+  },
+  "feature_importance": {
+    "temperature_c": 0.5755168255738001,
+    "rainfall_mm": 0.36208923473024474,
+    "humidity_pct": 0.028538790213215464,
+    "soil_saturation_pct": 0.023014322745235547,
+    "region_enc": 0.004925446120521659,
+    "month": 0.004704757534221195,
+    "drought_prone_base": 0.0007349337766107559,
+    "is_monsoon": 0.00047568930615053505
+  },
+  "train_rows": 17520,
+  "test_rows": 4380,
+  "feature_means": {
+    "rainfall_mm": 1.7250570776255707,
+    "temperature_c": 25.202502853881278,
+    "humidity_pct": 53.031309931506854,
+    "soil_saturation_pct": 31.483392123287672,
+    "drought_prone_base": 0.43167808219178083,
+    "month": 6.50662100456621,
+    "is_monsoon": 0.3343607305936073,
+    "region_enc": 14.498116438356165
+  },
+  "feature_stds": {
+    "rainfall_mm": 3.928799016568972,
+    "temperature_c": 4.669499145529271,
+    "humidity_pct": 14.20255322597711,
+    "soil_saturation_pct": 10.389763904426891,
+    "drought_prone_base": 0.4953242567459631,
+    "month": 3.449134036057624,
+    "is_monsoon": 0.4717799662547314,
+    "region_enc": 8.658536672650358
+  }
+}

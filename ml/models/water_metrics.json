@@ -1,0 +1,103 @@
+{
+  "best_model": "logistic_regression",
+  "used_scaler": true,
+  "features": [
+    "rainfall_mm",
+    "temperature_c",
+    "humidity_pct",
+    "water_storage_pct",
+    "pop_density_per_km2",
+    "drought_prone_base",
+    "month",
+    "is_monsoon",
+    "region_enc"
+  ],
+  "all_model_results": {
+    "logistic_regression": {
+      "accuracy": 0.7342,
+      "precision": 0.8757,
+      "recall": 0.7198,
+      "f1_score": 0.7901,
+      "roc_auc": 0.8088,
+      "confusion_matrix": [
+        [
+          1025,
+          311
+        ],
+        [
+          853,
+          2191
+        ]
+      ]
+    },
+    "random_forest": {
+      "accuracy": 0.7409,
+      "precision": 0.8687,
+      "recall": 0.7388,
+      "f1_score": 0.7985,
+      "roc_auc": 0.8023,
+      "confusion_matrix": [
+        [
+          996,
+          340
+        ],
+        [
+          795,
+          2249
+        ]
+      ]
+    },
+    "gradient_boosting": {
+      "accuracy": 0.7632,
+      "precision": 0.8106,
+      "recall": 0.8604,
+      "f1_score": 0.8347,
+      "roc_auc": 0.8037,
+      "confusion_matrix": [
+        [
+          724,
+          612
+        ],
+        [
+          425,
+          2619
+        ]
+      ]
+    }
+  },
+  "feature_importance": {
+    "pop_density_per_km2": 1.1385633559043813,
+    "drought_prone_base": 0.9774925467155395,
+    "water_storage_pct": 0.16790894287979766,
+    "humidity_pct": 0.08358020984603011,
+    "is_monsoon": 0.05911829056204741,
+    "temperature_c": 0.020047317880466577,
+    "region_enc": 0.01753966366633166,
+    "month": 0.010128980233452337,
+    "rainfall_mm": 0.005140564377036699
+  },
+  "train_rows": 17520,
+  "test_rows": 4380,
+  "feature_means": {
+    "rainfall_mm": 1.7134309360730593,
+    "temperature_c": 25.242038242009134,
+    "humidity_pct": 53.07157876712329,
+    "water_storage_pct": 54.86224315068493,
+    "pop_density_per_km2": 3218.325935605035,
+    "drought_prone_base": 0.4349315068493151,
+    "month": 6.49560502283105,
+    "is_monsoon": 0.33550228310502284,
+    "region_enc": 14.487956621004566
+  },
+  "feature_stds": {
+    "rainfall_mm": 3.852238651237463,
+    "temperature_c": 4.663788415863573,
+    "humidity_pct": 14.186374092956946,
+    "water_storage_pct": 19.708163749493718,
+    "pop_density_per_km2": 3418.835509388354,
+    "drought_prone_base": 0.4957621604607867,
+    "month": 3.4362048750814016,
+    "is_monsoon": 0.47217923162411296,
+    "region_enc": 8.647465901912906
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "best_model": "logistic_regression",
+  "used_scaler": true,
+  "features": [
+    "rainfall_mm",
+    "temperature_c",
+    "humidity_pct",
+    "soil_saturation_pct",
+    "drainage_index",
+    "elevation_m",
+    "pop_density_per_km2",
+    "flood_prone_base",
+    "month",
+    "is_monsoon",
+    "region_enc"
+  ],
+  "all_model_results": {
+    "logistic_regression": {
+      "accuracy": 0.7457,
+      "precision": 0.5845,
+      "recall": 0.7621,
+      "f1_score": 0.6616,
+      "roc_auc": 0.8217,
+      "confusion_matrix": [
+        [
+          2177,
+          774
+        ],
+        [
+          340,
+          1089
+        ]
+      ]
+    },
+    "random_forest": {
+      "accuracy": 0.7523,
+      "precision": 0.5978,
+      "recall": 0.7355,
+      "f1_score": 0.6596,
+      "roc_auc": 0.8163,
+      "confusion_matrix": [
+        [
+          2244,
+          707
+        ],
+        [
+          378,
+          1051
+        ]
+      ]
+    },
+    "gradient_boosting": {
+      "accuracy": 0.7674,
+      "precision": 0.6667,
+      "recall": 0.5738,
+      "f1_score": 0.6168,
+      "roc_auc": 0.8156,
+      "confusion_matrix": [
+        [
+          2541,
+          410
+        ],
+        [
+          609,
+          820
+        ]
+      ]
+    }
+  },
+  "feature_importance": {
+    "elevation_m": 0.8570752148442509,
+    "pop_density_per_km2": 0.8407659008056552,
+    "flood_prone_base": 0.6590238649945367,
+    "is_monsoon": 0.05281827353979114,
+    "drainage_index": 0.03611518540418482,
+    "temperature_c": 0.028157580998084256,
+    "humidity_pct": 0.027929260599569534,
+    "month": 0.009309444846767026,
+    "region_enc": 0.008439821787677212,
+    "rainfall_mm": 0.007260513350111391,
+    "soil_saturation_pct": 0.00030493547342545785
+  },
+  "train_rows": 17520,
+  "test_rows": 4380,
+  "feature_means": {
+    "rainfall_mm": 1.7071632420091325,
+    "temperature_c": 25.22927397260274,
+    "humidity_pct": 52.998316780821916,
+    "soil_saturation_pct": 31.40482648401827,
+    "drainage_index": 67.68450684931507,
+    "elevation_m": 434.24158675799083,
+    "pop_density_per_km2": 3244.0872743090717,
+    "flood_prone_base": 0.5007990867579909,
+    "month": 6.508675799086758,
+    "is_monsoon": 0.3359018264840183,
+    "region_enc": 14.49554794520548
+  },
+  "feature_stds": {
+    "rainfall_mm": 3.8958870241373846,
+    "temperature_c": 4.680154958403302,
+    "humidity_pct": 14.200711110036071,
+    "soil_saturation_pct": 10.334751382001224,
+    "drainage_index": 16.50790035317608,
+    "elevation_m": 520.0041032573934,
+    "pop_density_per_km2": 3431.4924227888287,
+    "flood_prone_base": 0.5000136314589911,
+    "month": 3.4442771037348305,
+    "is_monsoon": 0.47231824290786123,
+    "region_enc": 8.64744673918325
+  }
+}
