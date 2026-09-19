@@ -1,0 +1,27 @@
+{
+  "generated_by": "ml/data/generate_datasets.py",
+  "provider": "SyntheticProvider (anchored to public IMD/CPCB/CEA reference ranges)",
+  "note": "No live network access was available in the build environment; see module docstring / README Limitations for the real-data swap plan.",
+  "files": {
+    "flood_risk.csv": {
+      "rows": 21900,
+      "target": "flood_event (binary)"
+    },
+    "water_stress.csv": {
+      "rows": 21900,
+      "target": "water_stress_event (binary)"
+    },
+    "agriculture_stress.csv": {
+      "rows": 21900,
+      "target": "crop_stress_index (0-100 regression)"
+    },
+    "waste_circular_economy.csv": {
+      "rows": 30,
+      "target": "none (descriptive/rules-based)"
+    },
+    "energy_carbon.csv": {
+      "rows": 720,
+      "target": "energy_demand_mwh / carbon_emissions_tco2 (regression)"
+    }
+  }
+}

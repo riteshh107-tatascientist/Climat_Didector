@@ -1,0 +1,31 @@
+region,state,avg_annual_rainfall_mm,avg_temp_c,flood_prone_base,drought_prone_base,pop_density_class
+Kochi,Kerala,3000,27.5,1,0,high
+Mumbai,Maharashtra,2200,27.0,1,0,very_high
+Guwahati,Assam,1800,24.5,1,0,medium
+Kolkata,West Bengal,1600,26.8,1,0,very_high
+Patna,Bihar,1100,26.0,1,0,high
+Chennai,Tamil Nadu,1400,28.5,1,0,very_high
+Bhubaneswar,Odisha,1500,27.0,1,0,medium
+Lucknow,Uttar Pradesh,1000,26.5,1,0,high
+Ahmedabad,Gujarat,800,27.5,0,1,very_high
+Jaipur,Rajasthan,550,26.0,0,1,medium
+Bikaner,Rajasthan,260,27.0,0,1,low
+Nagpur,Maharashtra,1100,27.5,0,1,medium
+Pune,Maharashtra,750,24.5,0,1,high
+Bengaluru,Karnataka,900,23.5,0,1,very_high
+Hyderabad,Telangana,800,26.5,0,1,very_high
+Indore,Madhya Pradesh,950,25.5,0,1,medium
+Bhopal,Madhya Pradesh,1150,25.0,0,0,medium
+Chandigarh,Punjab,1000,24.0,0,0,medium
+Amritsar,Punjab,650,24.5,0,1,medium
+Dehradun,Uttarakhand,2000,21.0,1,0,low
+Shimla,Himachal Pradesh,1500,15.0,1,0,low
+Srinagar,Jammu & Kashmir,700,13.0,1,0,low
+Ranchi,Jharkhand,1400,24.0,0,1,medium
+Raipur,Chhattisgarh,1300,26.0,0,1,medium
+Thiruvananthapuram,Kerala,1800,27.5,1,0,high
+Visakhapatnam,Andhra Pradesh,1100,28.0,1,0,medium
+Surat,Gujarat,1200,27.0,1,0,very_high
+Varanasi,Uttar Pradesh,1050,26.0,1,0,high
+Agra,Uttar Pradesh,700,26.5,0,1,high
+Jodhpur,Rajasthan,360,27.0,0,1,low
